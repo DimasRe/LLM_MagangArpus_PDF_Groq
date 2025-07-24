@@ -1,0 +1,304 @@
+/* Mobile-specific styles for Chatbot Arsip */
+/* Version: 1.0.0 */
+
+/* Mobile Breakpoints */
+@media (max-width: 767px) {
+    /* General Mobile Adjustments */
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .content-section {
+        padding: 1.2rem;
+    }
+
+    .content-section > h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Mobile Header */
+    .header {
+        padding: 0.8rem 0;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Mobile Sidebar */
+    .sidebar {
+        max-height: 60px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sidebar-menu {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 0 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .sidebar-menu::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .sidebar-menu li {
+        flex: 0 0 auto;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    /* Mobile Chat Layout */
+    .chat-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .chat-sidebar {
+        order: 2; /* Move sidebar below chat area on mobile */
+        max-height: none;
+        padding-right: 0;
+    }
+
+    .chat-area {
+        order: 1; /* Show chat area first on mobile */
+        min-height: 300px;
+    }
+
+    .chat-messages {
+        min-height: 200px;
+        max-height: 50vh;
+    }
+
+    .chat-input-container {
+        padding: 0.8rem;
+    }
+
+    .chat-form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .chat-form input[type="text"] {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .chat-form button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    /* Mobile Document Selection */
+    .chat-documents-selector {
+        padding: 0.8rem;
+    }
+
+    .chat-document-list {
+        max-height: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .chat-document-item {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    /* Mobile Messages */
+    .message {
+        max-width: 90%;
+        padding: 0.8rem 1rem;
+    }
+
+    .message-content {
+        font-size: 0.95rem;
+    }
+
+    /* Mobile Upload Area */
+    .upload-area {
+        padding: 1.5rem 1rem;
+    }
+
+    .upload-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .upload-area p {
+        font-size: 0.9rem;
+    }
+
+    .upload-help {
+        font-size: 0.75rem;
+    }
+
+    /* Mobile Document Cards */
+    .documents-container {
+        grid-template-columns: 1fr;
+    }
+
+    .document-card {
+        padding: 1rem;
+    }
+
+    .document-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .document-actions button {
+        width: 100%;
+    }
+
+    /* Mobile FAQ */
+    .faq-question {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .faq-answer p {
+        padding: 0 1rem 1rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Mobile History */
+    .history-item {
+        padding: 1rem;
+    }
+
+    /* Mobile Floating Action Button for Chat */
+    .mobile-fab {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--gradient-accent-line);
+        color: white;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        z-index: 100;
+        font-size: 24px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mobile-fab:active {
+        transform: scale(0.95);
+    }
+
+    /* Mobile Document Selector Toggle */
+    .mobile-doc-selector-toggle {
+        display: flex;
+        width: 100%;
+        padding: 0.8rem;
+        background: var(--color-background-input);
+        border: 1px solid var(--color-border-card);
+        border-radius: var(--border-radius-small);
+        color: var(--color-text-light);
+        font-weight: 500;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.8rem;
+        cursor: pointer;
+    }
+
+    .mobile-doc-selector-toggle::after {
+        content: '▼';
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-doc-selector-toggle.active::after {
+        transform: rotate(180deg);
+    }
+
+    .mobile-doc-selector-content {
+        display: none;
+        padding: 0.5rem;
+        background: var(--color-background-card);
+        border: 1px solid var(--color-border-card);
+        border-radius: var(--border-radius-small);
+        margin-bottom: 1rem;
+    }
+
+    .mobile-doc-selector-content.active {
+        display: block;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .nav-brand h1 {
+        font-size: 1.3rem;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .message {
+        max-width: 95%;
+        padding: 0.7rem 0.9rem;
+    }
+
+    .message-content {
+        font-size: 0.9rem;
+    }
+
+    .chat-messages {
+        padding: 1rem;
+    }
+
+    .upload-area {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .upload-icon {
+        font-size: 2rem;
+    }
+
+    /* Adjust modal for very small screens */
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .modal-title-text {
+        font-size: 1.3rem;
+    }
+
+    .modal-message-text {
+        font-size: 0.95rem;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+}
